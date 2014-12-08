@@ -211,10 +211,14 @@ JS语句：
 		}
 	});
 
-####下载
+####下载和安装
 
 - [源码   tiletemplate.js](https://github.com/pandao/tileTemplate/tree/master/src/tiletemplate.js "源码")
 - [压缩版 tiletemplate.min.js](https://github.com/pandao/tileTemplate/tree/master/dist/tiletemplate.min.js "压缩版")
+
+通过npm安装：
+
+	npm install tiletemplate 
 
 ####License
 

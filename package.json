@@ -1,8 +1,8 @@
 {
-  "name": "tileTemplate",
+  "name": "tiletemplate",
   "version": "1.0.0",
   "description": "a simple javascript template engine.",
-  "main": "index.js",
+  "main": "src/tiletemplate.node.js",
   "directories": {
     "test": "tests"
   },

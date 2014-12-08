@@ -1,0 +1,114 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'publish',
+1 verbose cli   './' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.32
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 verbose publish [ './' ]
+6 verbose cache add [ './', null ]
+7 verbose cache add name=undefined spec="./" args=["./",null]
+8 verbose parsed url { protocol: null,
+8 verbose parsed url   slashes: null,
+8 verbose parsed url   auth: null,
+8 verbose parsed url   host: null,
+8 verbose parsed url   port: null,
+8 verbose parsed url   hostname: null,
+8 verbose parsed url   hash: null,
+8 verbose parsed url   search: null,
+8 verbose parsed url   query: null,
+8 verbose parsed url   pathname: './',
+8 verbose parsed url   path: './',
+8 verbose parsed url   href: './' }
+9 silly lockFile 0ee6c175- ./
+10 verbose lock ./ C:\Users\Pandao\AppData\Roaming\npm-cache\0ee6c175-.lock
+11 verbose tar pack [ 'C:\\Users\\Pandao\\AppData\\Roaming\\npm-cache\\tiletemplate\\1.0.0\\package.tgz',
+11 verbose tar pack   './' ]
+12 verbose tarball C:\Users\Pandao\AppData\Roaming\npm-cache\tiletemplate\1.0.0\package.tgz
+13 verbose folder ./
+14 info prepublish tiletemplate@1.0.0
+15 silly lockFile 04cb2bca-tar tar://./
+16 verbose lock tar://./ C:\Users\Pandao\AppData\Roaming\npm-cache\04cb2bca-tar.lock
+17 silly lockFile 6b411096-e-tiletemplate-1-0-0-package-tgz tar://C:\Users\Pandao\AppData\Roaming\npm-cache\tiletemplate\1.0.0\package.tgz
+18 verbose lock tar://C:\Users\Pandao\AppData\Roaming\npm-cache\tiletemplate\1.0.0\package.tgz C:\Users\Pandao\AppData\Roaming\npm-cache\6b411096-e-tiletemplate-1-0-0-package-tgz.lock
+19 silly lockFile 04cb2bca-tar tar://./
+20 silly lockFile 04cb2bca-tar tar://./
+21 silly lockFile 6b411096-e-tiletemplate-1-0-0-package-tgz tar://C:\Users\Pandao\AppData\Roaming\npm-cache\tiletemplate\1.0.0\package.tgz
+22 silly lockFile 6b411096-e-tiletemplate-1-0-0-package-tgz tar://C:\Users\Pandao\AppData\Roaming\npm-cache\tiletemplate\1.0.0\package.tgz
+23 silly lockFile 92fbf3e7-cache-tiletemplate-1-0-0-package C:\Users\Pandao\AppData\Roaming\npm-cache\tiletemplate\1.0.0\package
+24 verbose lock C:\Users\Pandao\AppData\Roaming\npm-cache\tiletemplate\1.0.0\package C:\Users\Pandao\AppData\Roaming\npm-cache\92fbf3e7-cache-tiletemplate-1-0-0-package.lock
+25 silly lockFile 92fbf3e7-cache-tiletemplate-1-0-0-package C:\Users\Pandao\AppData\Roaming\npm-cache\tiletemplate\1.0.0\package
+26 silly lockFile 92fbf3e7-cache-tiletemplate-1-0-0-package C:\Users\Pandao\AppData\Roaming\npm-cache\tiletemplate\1.0.0\package
+27 silly lockFile 0ee6c175- ./
+28 silly lockFile 0ee6c175- ./
+29 silly publish { name: 'tiletemplate',
+29 silly publish   version: '1.0.0',
+29 silly publish   description: 'a simple javascript template engine.',
+29 silly publish   main: 'src/tiletemplate.node.js',
+29 silly publish   directories: { test: 'tests' },
+29 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
+29 silly publish   repository:
+29 silly publish    { type: 'git',
+29 silly publish      url: 'https://github.com/pandao/tileTemplate.git' },
+29 silly publish   keywords: [ 'tileTemplate', 'javascript', 'template' ],
+29 silly publish   author: { name: 'Pandao' },
+29 silly publish   license: 'MIT',
+29 silly publish   bugs: { url: 'https://github.com/pandao/tileTemplate/issues' },
+29 silly publish   homepage: 'https://github.com/pandao/tileTemplate',
+29 silly publish   devDependencies:
+29 silly publish    { grunt: '^0.4.5',
+29 silly publish      'grunt-contrib-jshint': '^0.10.0',
+29 silly publish      'grunt-contrib-uglify': '^0.6.0' },
+29 silly publish   readme: '#tileTemplate \r\n\r\na simple javascript template engine.\r\n\r\n一个简单的、高性能的Javascript模板引擎。\r\n\r\n> 需要说明的是，`tileTemplate` 是在借鉴 `artTemplate` 设计原理的基础上设计开发的。在不开启调试的情况下，性能测试高于 `artTemplate`，耗时只有一半，甚至三分之一不到；开启调试则相当。\r\n\r\n####主要特性\r\n\r\n- 简单小巧，精简后只有`4.21K`，开启gzip后只有`2.1K`；\r\n- 原生语法，高性能预编译和渲染模板；\r\n- 安全，过滤和转义危险语句；\r\n- 支持各种模块化标准（`CommonJS` / `AMD` / `CMD` 等）；\r\n- 支持在 `Node.js` 环境下运行；\r\n- 支持调试，精确定位并通过控制台输出和显示错误或异常信息；\r\n- 支持所有主流的浏览器（`IE6+`）；\r\n- 支持 `include` 和自定义标签语法；\r\n\r\n####使用方法\r\n\r\n编写模板：\r\n\r\n\t<!-- type可以任意定义 text/xxxx -->\r\n    <script id="test-tpl" type="text/tileTemplate">\r\n        <h1><%=title%></h1>\r\n        <ul> \r\n            <% for (i = 0, len = list.length; i < len; i ++) { %>\r\n                <li>\r\n\t\t\t\t\t用户: <%=list[i].user%>\r\n\t\t\t\t\t网站：<a href="<%=list[i].site%>"><%=list[i].site%></a>\r\n\t\t\t\t</li>\r\n            <% } %>\r\n        </ul>\r\n    </script>\r\n\r\n预编译模板：\r\n\t\r\n\t// 返回一个函数\r\n\tvar compiler = tileTemplate.compile(document.getElementById(\'test-tpl\').innerHTML);\r\n\r\n渲染模板：\r\n\r\n    var data = {\r\n        title : "标题XXX",\r\n        list : []\r\n    }; \r\n\r\n    for (var i = 0; i < 10; i ++) {\r\n        data.list.push({\r\n            index: (i+1),\r\n            user: \'<strong style="color:red">tileTemplate \'+(i+1)+\'</strong>\',\r\n            site: \'https://github.com/pandao/tileTemplate\'\r\n        });\t\r\n    };\r\n\r\n\t// 输出HTML\r\n\t// document.getElementById(\'output\').innerHTML = compiler(data);\r\n    document.getElementById(\'output3\').innerHTML   = tileTemplate.render("test-tpl", data);\r\n\r\n> 注：同时也支持在 `Require.js` 和 `Sea.js` 中使用。\r\n\r\n####在Node.js使用：\r\n\r\n\t# tileTemplate.render(文件名, 数据, 编码);\r\n\r\n\tvar tileTemplate = require("../src/tiletemplate.node");\r\n\r\n\t//默认基本目录\r\n\ttileTemplate.config("basePath", __dirname + "/tpl");\r\n\r\n\t//console.log(tileTemplate.render("Hello <%=str%>", {str:"wolrd!"}));\r\n\r\n\t// 预编译\t\r\n\tvar compiler = tileTemplate.compile(tileTemplate.readFile("list.tile"));\r\n\t\r\n\tvar html = tileTemplate.render("test.tile.html", data);\r\n\tvar http = require(\'http\');\r\n\t\r\n\thttp.createServer(function (request, response) {\r\n\t    response.writeHead(200, {\'Content-Type\': \'text/html\'});\r\n\t    response.end(html);\r\n\t}).listen(8888);\r\n\r\n\tconsole.log(\'Server running at http://127.0.0.1:8888/\');\r\n\r\n> 说明：`tileTemplate.readFile(文件名, 编码)` 方法只能在 `Node.js` 下使用。\r\n\r\n####主要语法\r\n\r\n`tileTemplate` 目前只支持原生语法。\r\n\r\n文本输出：\r\n\r\n\t<%=变量%>\r\n\r\nJS语句：\r\n\r\n\t<% if (list.length > 0) { %>\r\n\t<p>Total: <%=list.length%> </p>\r\n\t<% } else { %>\r\n\t<p>暂时没有</p>\t\r\n\t<% } %>\r\n\r\n\t<%=(list.index>1?\'>1\':\'<1\')%>\r\n\t...\r\n\r\n变量注释：\r\n\r\n\t<%=#变量%>\r\n\t<img src="<%=avatar%>" />\r\n\r\n行注释：\r\n\r\n\t//注释文本\r\n\t//<%=(list.index>1?\'>1\':\'<1\')%>\r\n\r\n嵌套模板（支持多级嵌套）：\r\n\r\n\t<% include(\'模板id\') %>\r\n\r\n自定义标签语句（只能输出字符串）：\r\n\r\n\t# 定义标签语句\r\n    tileTemplate.tag("em", function(content) {         \r\n        if(content == 12) {\r\n\t\t\tvar img = "http://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/0b/tootha_thumb.gif";\r\n            return \'<img src="\'+img+\'" alt="em\'+content+\'"/>\';\r\n        } else {\r\n            return content.toString();\r\n        }\r\n    });\r\n    \r\n    tileTemplate.tag("time", function() {\r\n        return " time: " + (new Date).getTime();\r\n    }); \r\n\r\n\t#使用标签语句\r\n    <%=tag:em:12%>\r\n    <%=tag:em:haha%>\r\n    <%=tag:em:哈哈%>    \r\n    <%=tag:time%>\r\n\r\n####主要方法\r\n\r\n默认选项：\r\n\r\n    settings = {\r\n        debug    : false,  是否开启调试功能，默认不开启，在生产环境下，这样能获得更高的性能和速度；开发时，请开启；\r\n        cached   : true,   是否开启缓存，默认开启，性能更好\r\n        filter   : true,   是否过滤模板中的危险语句等，如alert等\r\n        openTag  : "<%",   模板开始标签\r\n        closeTag : "%>"    模板结束标签\r\n    }\r\n\r\n修改和设置配置选项：\r\n\r\n\t# 使用set或config方法修改配置选项，config为别名\r\n\t# 批量设置\r\n\ttileTemplate.set({\r\n        openTag : "{{",\r\n        closeTag : "}}"\r\n    });\r\n\r\n\ttileTemplate.config({\r\n        openTag : "{{",\r\n        closeTag : "}}"\r\n    });\r\n\r\n\t# 单个设置\r\n\ttileTemplate.set("openTag", "{{");\r\n\ttileTemplate.config("openTag", "{{");\r\n\r\n渲染模板：\r\n\r\n\t@id       String     模板的ID，或者直接传入模板内容\r\n\t@data     Key/Value  传入模板的数据\r\n\t@filename String     当不通过ID获取模板，而是直接传入模板，需要设置一个模板名称\r\n\r\n\ttileTemplate.render(id, data, filename);\r\n\r\n预编译模板：\r\n\r\n\t@tpl      String     模板的内容\r\n\t@data     Key/Value  传入模板的数据，默认为{}\r\n\t@options  Key/Value  配置选项，\r\n\t\t\t\t\t\t 默认为 {include: false, name : "tile" + guid}，分别表示是否有嵌套的模板，嵌套的模板名称\r\n\t\r\n\ttileTemplate.compile(tpl, data, options);\r\n\r\n自定义标签语句：\r\n\r\n\t@name     String    标签名称\r\n\t@callback Function  处理标签的回调方法，参数为content，代表标签语句传入的参数\r\n\r\n\ttileTemplate.tag(name, callback);\r\n\r\n清除某个模板的缓存：\r\n\r\n\t@id       String     模板的ID或者文件名\r\n\r\n\ttileTemplate.clear(id);\r\n\r\n扩展tileTemplate：\r\n\r\n\ttileTemplate.xxx = xxxx;\r\n\t# 或者\r\n\ttileTemplate.extend({\r\n\t\txxx : "xxxx"\r\n\t\tadd : function() {\r\n\t\t}\r\n\t});\r\n\r\n####下载和安装\r\n\r\n- [源码   tiletemplate.js](https://github.com/pandao/tileTemplate/tree/master/src/tiletemplate.js "源码")\r\n- [压缩版 tiletemplate.min.js](https://github.com/pandao/tileTemplate/tree/master/dist/tiletemplate.min.js "压缩版")\r\n\r\n通过npm安装：\r\n\r\n\tnpm install tiletemplate\r\n\r\n通过bower安装：\r\n\r\n\tbower install tileTemplate\r\n\r\n####License\r\n\r\nThe MIT License (MIT)\r\n\r\nCopyright (c) 2014 Pandao',
+29 silly publish   readmeFilename: 'README.md',
+29 silly publish   gitHead: '1ebfc4121b00ed5d8bf4755f17738862186ed609',
+29 silly publish   _id: 'tiletemplate@1.0.0',
+29 silly publish   _shasum: '789618010f60a75e7cd10dacb49c29c8872ac1a0',
+29 silly publish   _from: './' }
+30 verbose request where is /tiletemplate
+31 verbose request registry https://registry.npmjs.org/
+32 verbose request id 8b46fde0dd43a13a
+33 verbose url raw /tiletemplate
+34 verbose url resolving [ 'https://registry.npmjs.org/', './tiletemplate' ]
+35 verbose url resolved https://registry.npmjs.org/tiletemplate
+36 verbose request where is https://registry.npmjs.org/tiletemplate
+37 info trying registry request attempt 1 at 23:08:20
+38 http PUT https://registry.npmjs.org/tiletemplate
+39 http 403 https://registry.npmjs.org/tiletemplate
+40 verbose headers { date: 'Mon, 08 Dec 2014 15:08:46 GMT',
+40 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+40 verbose headers   'content-type': 'application/json',
+40 verbose headers   'cache-control': 'max-age=60',
+40 verbose headers   'content-length': '12309',
+40 verbose headers   'accept-ranges': 'bytes',
+40 verbose headers   via: '1.1 varnish',
+40 verbose headers   'x-served-by': 'cache-ty68-TYO',
+40 verbose headers   'x-cache': 'MISS',
+40 verbose headers   'x-cache-hits': '0',
+40 verbose headers   'x-timer': 'S1418051293.652595,VS0,VE33237',
+40 verbose headers   'keep-alive': 'timeout=10, max=50',
+40 verbose headers   connection: 'Keep-Alive' }
+41 error publish Failed PUT 403
+42 error Error: forbidden cannot modify pre-existing version: 1.0.0
+42 error old={"name":"tiletemplate","version":"1.0.0","description":"a simple javascript template engine.","main":"src/tiletemplate.node.js","directories":{"test":"tests"},"scripts":{"test":"echo \"Error: no test specified\" && exit 1"},"repository":{"type":"git","url":"https://github.com/pandao/tileTemplate.git"},"keywords":["tileTemplate","javascript","template"],"author":{"name":"Pandao"},"license":"MIT","bugs":{"url":"https://github.com/pandao/tileTemplate/issues"},"homepage":"https://github.com/pandao/tileTemplate","devDependencies":{"grunt":"^0.4.5","grunt-contrib-jshint":"^0.10.0","grunt-contrib-uglify":"^0.6.0"},"gitHead":"1ebfc4121b00ed5d8bf4755f17738862186ed609","_id":"tiletemplate@1.0.0","_shasum":"a2284286d05d150e570854535deb573a29fcf83b","_from":".","_npmVersion":"1.4.28","_npmUser":{"name":"pandao","email":"272383090@qq.com"},"maintainers":[{"name":"pandao","email":"272383090@qq.com"}],"dist":{"shasum":"a2284286d05d150e570854535deb573a29fcf83b","tarball":"http://registry.npmjs.org/tiletemplate/-/tiletemplate-1.0.0.tgz"}}
+42 error new={"name":"tiletemplate","version":"1.0.0","description":"a simple javascript template engine.","main":"src/tiletemplate.node.js","directories":{"test":"tests"},"scripts":{"test":"echo \"Error: no test specified\" && exit 1"},"repository":{"type":"git","url":"https://github.com/pandao/tileTemplate.git"},"keywords":["tileTemplate","javascript","template"],"author":{"name":"Pandao"},"license":"MIT","bugs":{"url":"https://github.com/pandao/tileTemplate/issues"},"homepage":"https://github.com/pandao/tileTemplate","devDependencies":{"grunt":"^0.4.5","grunt-contrib-jshint":"^0.10.0","grunt-contrib-uglify":"^0.6.0"},"readme":"#tileTemplate \u000d\u000a\u000d\u000aa simple javascript template engine.\u000d\u000a\u000d\u000a一个简单的、高性能的Javascript模板引擎。\u000d\u000a\u000d\u000a> 需要说明的是，`tileTemplate` 是在借鉴 `artTemplate` 设计原理的基础上设计开发的。在不开启调试的情况下，性能测试高于 `artTemplate`，耗时只有一半，甚至三分之一不到；开启调试则相当。\u000d\u000a\u000d\u000a####主要特性\u000d\u000a\u000d\u000a- 简单小巧，精简后只有`4.21K`，开启gzip后只有`2.1K`；\u000d\u000a- 原生语法，高性能预编译和渲染模板；\u000d\u000a- 安全，过滤和转义危险语句；\u000d\u000a- 支持各种模块化标准（`CommonJS` / `AMD` / `CMD` 等）；\u000d\u000a- 支持在 `Node.js` 环境下运行；\u000d\u000a- 支持调试，精确定位并通过控制台输出和显示错误或异常信息；\u000d\u000a- 支持所有主流的浏览器（`IE6+`）；\u000d\u000a- 支持 `include` 和自定义标签语法；\u000d\u000a\u000d\u000a####使用方法\u000d\u000a\u000d\u000a编写模板：\u000d\u000a\u000d\u000a\u0009<!-- type可以任意定义 text/xxxx -->\u000d\u000a    <script id=\"test-tpl\" type=\"text/tileTemplate\">\u000d\u000a        <h1><%=title%></h1>\u000d\u000a        <ul> \u000d\u000a            <% for (i = 0, len = list.length; i < len; i ++) { %>\u000d\u000a                <li>\u000d\u000a\u0009\u0009\u0009\u0009\u0009用户: <%=list[i].user%>\u000d\u000a\u0009\u0009\u0009\u0009\u0009网站：<a href=\"<%=list[i].site%>\"><%=list[i].site%></a>\u000d\u000a\u0009\u0009\u0009\u0009</li>\u000d\u000a            <% } %>\u000d\u000a        </ul>\u000d\u000a    </script>\u000d\u000a\u000d\u000a预编译模板：\u000d\u000a\u0009\u000d\u000a\u0009// 返回一个函数\u000d\u000a\u0009var compiler = tileTemplate.compile(document.getElementById('test-tpl').innerHTML);\u000d\u000a\u000d\u000a渲染模板：\u000d\u000a\u000d\u000a    var data = {\u000d\u000a        title : \"标题XXX\",\u000d\u000a        list : []\u000d\u000a    }; \u000d\u000a\u000d\u000a    for (var i = 0; i < 10; i ++) {\u000d\u000a        data.list.push({\u000d\u000a            index: (i+1),\u000d\u000a            user: '<strong style=\"color:red\">tileTemplate '+(i+1)+'</strong>',\u000d\u000a            site: 'https://github.com/pandao/tileTemplate'\u000d\u000a        });\u0009\u000d\u000a    };\u000d\u000a\u000d\u000a\u0009// 输出HTML\u000d\u000a\u0009// document.getElementById('output').innerHTML = compiler(data);\u000d\u000a    document.getElementById('output3').innerHTML   = tileTemplate.render(\"test-tpl\", data);\u000d\u000a\u000d\u000a> 注：同时也支持在 `Require.js` 和 `Sea.js` 中使用。\u000d\u000a\u000d\u000a####在Node.js使用：\u000d\u000a\u000d\u000a\u0009# tileTemplate.render(文件名, 数据, 编码);\u000d\u000a\u000d\u000a\u0009var tileTemplate = require(\"../src/tiletemplate.node\");\u000d\u000a\u000d\u000a\u0009//默认基本目录\u000d\u000a\u0009tileTemplate.config(\"basePath\", __dirname + \"/tpl\");\u000d\u000a\u000d\u000a\u0009//console.log(tileTemplate.render(\"Hello <%=str%>\", {str:\"wolrd!\"}));\u000d\u000a\u000d\u000a\u0009// 预编译\u0009\u000d\u000a\u0009var compiler = tileTemplate.compile(tileTemplate.readFile(\"list.tile\"));\u000d\u000a\u0009\u000d\u000a\u0009var html = tileTemplate.render(\"test.tile.html\", data);\u000d\u000a\u0009var http = require('http');\u000d\u000a\u0009\u000d\u000a\u0009http.createServer(function (request, response) {\u000d\u000a\u0009    response.writeHead(200, {'Content-Type': 'text/html'});\u000d\u000a\u0009    response.end(html);\u000d\u000a\u0009}).listen(8888);\u000d\u000a\u000d\u000a\u0009console.log('Server running at http://127.0.0.1:8888/');\u000d\u000a\u000d\u000a> 说明：`tileTemplate.readFile(文件名, 编码)` 方法只能在 `Node.js` 下使用。\u000d\u000a\u000d\u000a####主要语法\u000d\u000a\u000d\u000a`tileTemplate` 目前只支持原生语法。\u000d\u000a\u000d\u000a文本输出：\u000d\u000a\u000d\u000a\u0009<%=变量%>\u000d\u000a\u000d\u000aJS语句：\u000d\u000a\u000d\u000a\u0009<% if (list.length > 0) { %>\u000d\u000a\u0009<p>Total: <%=list.length%> </p>\u000d\u000a\u0009<% } else { %>\u000d\u000a\u0009<p>暂时没有</p>\u0009\u000d\u000a\u0009<% } %>\u000d\u000a\u000d\u000a\u0009<%=(list.index>1?'>1':'<1')%>\u000d\u000a\u0009...\u000d\u000a\u000d\u000a变量注释：\u000d\u000a\u000d\u000a\u0009<%=#变量%>\u000d\u000a\u0009<img src=\"<%=avatar%>\" />\u000d\u000a\u000d\u000a行注释：\u000d\u000a\u000d\u000a\u0009//注释文本\u000d\u000a\u0009//<%=(list.index>1?'>1':'<1')%>\u000d\u000a\u000d\u000a嵌套模板（支持多级嵌套）：\u000d\u000a\u000d\u000a\u0009<% include('模板id') %>\u000d\u000a\u000d\u000a自定义标签语句（只能输出字符串）：\u000d\u000a\u000d\u000a\u0009# 定义标签语句\u000d\u000a    tileTemplate.tag(\"em\", function(content) {         \u000d\u000a        if(content == 12) {\u000d\u000a\u0009\u0009\u0009var img = \"http://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/0b/tootha_thumb.gif\";\u000d\u000a            return '<img src=\"'+img+'\" alt=\"em'+content+'\"/>';\u000d\u000a        } else {\u000d\u000a            return content.toString();\u000d\u000a        }\u000d\u000a    });\u000d\u000a    \u000d\u000a    tileTemplate.tag(\"time\", function() {\u000d\u000a        return \" time: \" + (new Date).getTime();\u000d\u000a    }); \u000d\u000a\u000d\u000a\u0009#使用标签语句\u000d\u000a    <%=tag:em:12%>\u000d\u000a    <%=tag:em:haha%>\u000d\u000a    <%=tag:em:哈哈%>    \u000d\u000a    <%=tag:time%>\u000d\u000a\u000d\u000a####主要方法\u000d\u000a\u000d\u000a默认选项：\u000d\u000a\u000d\u000a    settings = {\u000d\u000a        debug    : false,  是否开启调试功能，默认不开启，在生产环境下，这样能获得更高的性能和速度；开发时，请开启；\u000d\u000a        cached   : true,   是否开启缓存，默认开启，性能更好\u000d\u000a        filter   : true,   是否过滤模板中的危险语句等，如alert等\u000d\u000a        openTag  : \"<%\",   模板开始标签\u000d\u000a        closeTag : \"%>\"    模板结束标签\u000d\u000a    }\u000d\u000a\u000d\u000a修改和设置配置选项：\u000d\u000a\u000d\u000a\u0009# 使用set或config方法修改配置选项，config为别名\u000d\u000a\u0009# 批量设置\u000d\u000a\u0009tileTemplate.set({\u000d\u000a        openTag : \"{{\",\u000d\u000a        closeTag : \"}}\"\u000d\u000a    });\u000d\u000a\u000d\u000a\u0009tileTemplate.config({\u000d\u000a        openTag : \"{{\",\u000d\u000a        closeTag : \"}}\"\u000d\u000a    });\u000d\u000a\u000d\u000a\u0009# 单个设置\u000d\u000a\u0009tileTemplate.set(\"openTag\", \"{{\");\u000d\u000a\u0009tileTemplate.config(\"openTag\", \"{{\");\u000d\u000a\u000d\u000a渲染模板：\u000d\u000a\u000d\u000a\u0009@id       String     模板的ID，或者直接传入模板内容\u000d\u000a\u0009@data     Key/Value  传入模板的数据\u000d\u000a\u0009@filename String     当不通过ID获取模板，而是直接传入模板，需要设置一个模板名称\u000d\u000a\u000d\u000a\u0009tileTemplate.render(id, data, filename);\u000d\u000a\u000d\u000a预编译模板：\u000d\u000a\u000d\u000a\u0009@tpl      String     模板的内容\u000d\u000a\u0009@data     Key/Value  传入模板的数据，默认为{}\u000d\u000a\u0009@options  Key/Value  配置选项，\u000d\u000a\u0009\u0009\u0009\u0009\u0009\u0009 默认为 {include: false, name : \"tile\" + guid}，分别表示是否有嵌套的模板，嵌套的模板名称\u000d\u000a\u0009\u000d\u000a\u0009tileTemplate.compile(tpl, data, options);\u000d\u000a\u000d\u000a自定义标签语句：\u000d\u000a\u000d\u000a\u0009@name     String    标签名称\u000d\u000a\u0009@callback Function  处理标签的回调方法，参数为content，代表标签语句传入的参数\u000d\u000a\u000d\u000a\u0009tileTemplate.tag(name, callback);\u000d\u000a\u000d\u000a清除某个模板的缓存：\u000d\u000a\u000d\u000a\u0009@id       String     模板的ID或者文件名\u000d\u000a\u000d\u000a\u0009tileTemplate.clear(id);\u000d\u000a\u000d\u000a扩展tileTemplate：\u000d\u000a\u000d\u000a\u0009tileTemplate.xxx = xxxx;\u000d\u000a\u0009# 或者\u000d\u000a\u0009tileTemplate.extend({\u000d\u000a\u0009\u0009xxx : \"xxxx\"\u000d\u000a\u0009\u0009add : function() {\u000d\u000a\u0009\u0009}\u000d\u000a\u0009});\u000d\u000a\u000d\u000a####下载和安装\u000d\u000a\u000d\u000a- [源码   tiletemplate.js](https://github.com/pandao/tileTemplate/tree/master/src/tiletemplate.js \"源码\")\u000d\u000a- [压缩版 tiletemplate.min.js](https://github.com/pandao/tileTemplate/tree/master/dist/tiletemplate.min.js \"压缩版\")\u000d\u000a\u000d\u000a通过npm安装：\u000d\u000a\u000d\u000a\u0009npm install tiletemplate\u000d\u000a\u000d\u000a通过bower安装：\u000d\u000a\u000d\u000a\u0009bower install tileTemplate\u000d\u000a\u000d\u000a####License\u000d\u000a\u000d\u000aThe MIT License (MIT)\u000d\u000a\u000d\u000aCopyright (c) 2014 Pandao","readmeFilename":"README.md","gitHead":"1ebfc4121b00ed5d8bf4755f17738862186ed609","_id":"tiletemplate@1.0.0","_shasum":"789618010f60a75e7cd10dacb49c29c8872ac1a0","_from":"./","_npmVersion":"1.4.28","_npmUser":{"name":"pandao","email":"272383090@qq.com"},"maintainers":[{"name":"pandao","email":"272383090@qq.com"}],"dist":{"shasum":"789618010f60a75e7cd10dacb49c29c8872ac1a0","tarball":"http://registry.npmjs.org/tiletemplate/-/tiletemplate-1.0.0.tgz"}}: tiletemplate
+42 error     at RegClient.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:308:14)
+42 error     at Request._callback (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:246:65)
+42 error     at Request.self.callback (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:236:22)
+42 error     at Request.emit (events.js:98:17)
+42 error     at Request.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1142:14)
+42 error     at Request.emit (events.js:117:20)
+42 error     at IncomingMessage.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1096:12)
+42 error     at IncomingMessage.emit (events.js:117:20)
+42 error     at _stream_readable.js:943:16
+42 error     at process._tickCallback (node.js:419:13)
+43 error If you need help, you may report this *entire* log,
+43 error including the npm and node versions, at:
+43 error     <http://github.com/npm/npm/issues>
+44 error System Windows_NT 6.1.7601
+45 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "publish" "./"
+46 error cwd D:\APMServ\www\htdocs\tileTemplate
+47 error node -v v0.10.32
+48 error npm -v 1.4.28
+49 verbose exit [ 1, true ]
