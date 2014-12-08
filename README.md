@@ -21,11 +21,11 @@ a simple javascript template engine.
 
 编写模板：
 
-	<!-- type可以任意定义 -->
+	<!-- type可以任意定义 text/xxxx -->
     <script id="test-tpl" type="text/tileTemplate">
         <h1><%=title%></h1>
         <ul> 
-            <% for (i = 0, l = list.length; i < l; i ++) { %>
+            <% for (i = 0, len = list.length; i < len; i ++) { %>
                 <li>
 					用户: <%=list[i].user%>
 					网站：<a href="<%=list[i].site%>"><%=list[i].site%></a>
@@ -55,8 +55,10 @@ a simple javascript template engine.
     };
 
 	// 输出HTML
-	// document.getElementById('output').innerHTML  = compiler(data);
-    document.getElementById('output3').innerHTML    = tileTemplate.render("test-tpl", data);
+	// document.getElementById('output').innerHTML = compiler(data);
+    document.getElementById('output3').innerHTML   = tileTemplate.render("test-tpl", data);
+
+> 注：同时也支持在 `Require.js` 和 `Sea.js` 中使用。
 
 ####在Node.js使用：
 
@@ -68,6 +70,9 @@ a simple javascript template engine.
 	tileTemplate.config("basePath", __dirname + "/tpl");
 
 	//console.log(tileTemplate.render("Hello <%=str%>", {str:"wolrd!"}));
+
+	// 预编译	
+	var compiler = tileTemplate.compile(tileTemplate.readFile("list.tile"));
 	
 	var html = tileTemplate.render("test.tile.html", data);
 	var http = require('http');
@@ -78,6 +83,8 @@ a simple javascript template engine.
 	}).listen(8888);
 
 	console.log('Server running at http://127.0.0.1:8888/');
+
+> 说明：`tileTemplate.readFile(文件名, 编码)` 方法只能在 `Node.js` 下使用。
 
 ####主要语法
 
@@ -133,6 +140,76 @@ JS语句：
     <%=tag:em:haha%>
     <%=tag:em:哈哈%>    
     <%=tag:time%>
+
+####主要方法
+
+默认选项：
+
+    settings = {
+        debug    : false,  是否开启调试功能，默认不开启，在生产环境下，这样能获得更高的性能和速度；开发时，请开启；
+        cached   : true,   是否开启缓存，默认开启，性能更好
+        filter   : true,   是否过滤模板中的危险语句等，如alert等
+        openTag  : "<%",   模板开始标签
+        closeTag : "%>"    模板结束标签
+    }
+
+修改和设置配置选项：
+
+	# 使用set或config方法修改配置选项，config为别名
+	# 批量设置
+	tileTemplate.set({
+        openTag : "{{",
+        closeTag : "}}"
+    });
+
+	tileTemplate.config({
+        openTag : "{{",
+        closeTag : "}}"
+    });
+
+	# 单个设置
+	tileTemplate.set("openTag", "{{");
+	tileTemplate.config("openTag", "{{");
+
+渲染模板：
+
+	@id       String     模板的ID，或者直接传入模板内容
+	@data     Key/Value  传入模板的数据
+	@filename String     当不通过ID获取模板，而是直接传入模板，需要设置一个模板名称
+
+	tileTemplate.render(id, data, filename);
+
+预编译模板：
+
+	@tpl      String     模板的内容
+	@data     Key/Value  传入模板的数据，默认为{}
+	@options  Key/Value  配置选项，
+						 默认为 {include: false, name : "tile" + guid}，分别表示是否有嵌套的模板，嵌套的模板名称
+	
+	tileTemplate.compile(tpl, data, options);
+
+自定义标签语句：
+
+	@name     String    标签名称
+	@callback Function  处理标签的回调方法，参数为content，代表标签语句传入的参数
+
+	tileTemplate.tag(name, callback);
+
+清除某个模板的缓存：
+
+	@id       String     模板的ID或者文件名
+
+	tileTemplate.clear(id);
+
+扩展tileTemplate：
+
+	tileTemplate.xxx = xxxx;
+	# 或者
+	tileTemplate.extend({
+		xxx : "xxxx"
+		add : function() {
+		}
+	});
 
 ####下载
 
