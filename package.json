@@ -1,5 +1,5 @@
 {
-  "name": "tiletemplate",
+  "name": "tileTemplate",
   "version": "1.0.0",
   "description": "a simple javascript template engine.",
   "main": "src/tiletemplate.node.js",
