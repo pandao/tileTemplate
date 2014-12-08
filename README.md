@@ -15,7 +15,7 @@ a simple javascript template engine.
 - 安全，过滤和转义危险语句；
 - 支持各种模块化标准（`CommonJS` / `AMD` / `CMD` 等）；
 - 支持在 `Node.js` 环境下运行；
-- 支持调试，精确定位并通过控制台输出和显示错误或异常信息；
+- 支持调试，精确定位并通过控制台输出和显示错误或异常信息（[查看调试](http://pandao.github.io/tiletemplate/tests/test-debug.html)）；
 - 支持所有主流的浏览器（`IE6+`）；
 - 支持 `include` 和自定义标签语法；
 
