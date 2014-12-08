@@ -20,7 +20,10 @@
             <h1><%=title%></h1>
             <ul> 
                 <% for (i = 0, l = list.length; i < l; i ++) { %>
-                    <li><%=#list[i].index%>. 用户: <%=list[i].user%> 网站：<a href="<%=list[i].site%>"><%=list[i].site%></a> <%=(list.index>1?'>1':'<1')%></li>
+                    <li>
+                        <%=#list[i].index%>. 用户: <%=list[i].user%> 
+                        网站：<a href="<%=list[i].site%>"><%=list[i].site%></a> <%=(list.index>1?'>1':'<1')%>
+                    </li>
                 <% } %>
             </ul>
             
