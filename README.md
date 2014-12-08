@@ -218,7 +218,11 @@ JS语句：
 
 通过npm安装：
 
-	npm install tiletemplate 
+	npm install tiletemplate
+
+通过bower安装：
+
+	bower install tiletemplate
 
 ####License
 
