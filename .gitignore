@@ -3,3 +3,4 @@ test/
 backup/
 *.bat
 *.sh
+*.log
