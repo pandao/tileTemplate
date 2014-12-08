@@ -4,6 +4,8 @@ a simple javascript template engine.
 
 一个简单的、高性能的Javascript模板引擎。
 
+![](http://pandao.github.io/tiletemplate/tests/speed-test.png)
+
 > 需要说明的是，`tileTemplate` 是在借鉴 `artTemplate` 设计原理的基础上设计开发的。在不开启调试的情况下，性能测试高于 `artTemplate`，耗时只有一半，甚至三分之一不到；开启调试则相当。[(性能测试)](http://pandao.github.io/tiletemplate/tests/test-speed.html "(性能测试)")
 
 ####主要特性
