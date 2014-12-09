@@ -6,7 +6,7 @@
 		<title>tileTemplate Test in Node.js</title> 
 	</head>
 	<body> 
-		<% include("header.tile"); %>
+		<% include("header.tile") %>
 		<h1><%=title%></h1>
 		<ul> 
 			<% for (i = 0, l = list.length; i < l; i ++) { %>
@@ -27,17 +27,16 @@
 		//这是注释
 		<img src="<%=avatar%>" />
 		
-		//<%=(list.index>1?'>1':'<1')%>
-		
 		<% var a=10; while(a>0) {a--;} %>
 		
-		<% if(typeof console == "object") console.log("console");  %>
+		<% if(typeof console == "object") console.log("console is object.");  %>
 		<% if(a==0) {} %>
 		<% if(a==0) { %>
 		a==0 
 		<% } %>
 
 		<p>fadfssdfsadf</p>
+            
 		<% include("footer.tile") %>
 	</body> 
 </html>

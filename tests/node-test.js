@@ -65,12 +65,12 @@ console.log(html2);
 
 console.log(tileTemplate.render("Hello <%=str%>", {str:"wolrd!"}));
 
-var compiler = tileTemplate.compile(tileTemplate.readFile("list.tile"));
+//var compiler = tileTemplate.compile(tileTemplate.readFile("test.tile.html"));
 
-console.log("compiler");
+//console.log(compiler.toString());
 
 for (var i=0; i<100; i++) {
-	compiler(data)
+	//compiler(data)
 }
 //console.log(compiler(data));
 

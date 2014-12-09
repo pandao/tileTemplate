@@ -73,8 +73,8 @@ a simple javascript template engine.
 
 	//console.log(tileTemplate.render("Hello <%=str%>", {str:"wolrd!"}));
 
-	// 预编译	
-	var compiler = tileTemplate.compile(tileTemplate.readFile("list.tile"));
+	// 预编译某个模板，用于循环渲染
+	//var compiler = tileTemplate.compile(tileTemplate.readFile("list.tile"));
 	
 	var html = tileTemplate.render("test.tile.html", data);
 	var http = require('http');
