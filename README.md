@@ -19,6 +19,19 @@ a simple javascript template engine.
 - 支持所有主流的浏览器（`IE6+`）；
 - 支持 `include` 和自定义标签语法；
 
+####下载和安装
+
+- [源码   tiletemplate.js](https://github.com/pandao/tileTemplate/tree/master/src/tiletemplate.js "源码")
+- [压缩版 tiletemplate.min.js](https://github.com/pandao/tileTemplate/tree/master/dist/tiletemplate.min.js "压缩版")
+
+通过npm安装：
+
+	npm install tiletemplate
+
+通过bower安装：
+
+	bower install tiletemplate
+
 ####使用方法
 
 编写模板：
@@ -67,6 +80,8 @@ a simple javascript template engine.
 	# tileTemplate.render(文件名, 数据, 编码);
 
 	var tileTemplate = require("../src/tiletemplate.node");
+	// 通过npm安装的
+	// var tileTemplate = require('tiletemplate');
 
 	//默认基本目录
 	tileTemplate.config("basePath", __dirname + "/tpl");
@@ -212,19 +227,6 @@ JS语句：
 		add : function() {
 		}
 	});
-
-####下载和安装
-
-- [源码   tiletemplate.js](https://github.com/pandao/tileTemplate/tree/master/src/tiletemplate.js "源码")
-- [压缩版 tiletemplate.min.js](https://github.com/pandao/tileTemplate/tree/master/dist/tiletemplate.min.js "压缩版")
-
-通过npm安装：
-
-	npm install tiletemplate
-
-通过bower安装：
-
-	bower install tiletemplate
 
 ####License
 
