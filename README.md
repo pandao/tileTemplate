@@ -83,7 +83,7 @@ a simple javascript template engine.
 	// 通过npm安装的
 	// var tileTemplate = require('tiletemplate');
 
-	//默认基本目录
+	// 设置基本目录
 	tileTemplate.config("basePath", __dirname + "/tpl");
 
 	//console.log(tileTemplate.render("Hello <%=str%>", {str:"wolrd!"}));
