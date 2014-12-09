@@ -19,3 +19,7 @@
 - 新增 `compileInclude()` 方法；
 - 新增 `regex` 属性；
 - 重写`node.js`版的 `compileInclude()` 和 `render()` 方法；
+
+#####v1.1.1  
+
+修正一些bug和修改文档
