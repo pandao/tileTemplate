@@ -110,6 +110,7 @@ a simple javascript template engine.
 文本输出：
 
 	<%=变量%>
+	<img src="<%=avatar%>" />
 
 JS语句：
 
@@ -125,7 +126,6 @@ JS语句：
 变量注释：
 
 	<%=#变量%>
-	<img src="<%=avatar%>" />
 
 行注释：
 
