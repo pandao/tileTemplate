@@ -73,7 +73,7 @@ a simple javascript template engine.
 	// document.getElementById('output').innerHTML = compiler(data);
     document.getElementById('output3').innerHTML   = tileTemplate.render("test-tpl", data);
 
-> 注：同时也支持在 `Require.js` 和 `Sea.js` 中使用。
+> 注：同时也支持在 [Require.js](http://pandao.github.io/tiletemplate/examples/requirejs-test.html) 和 [Sea.js](http://pandao.github.io/tiletemplate/examples/seajs-test.html) 中使用。
 
 ####在Node.js使用：
 
