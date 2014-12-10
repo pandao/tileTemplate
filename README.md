@@ -1,15 +1,19 @@
 #tileTemplate 
 
-a simple javascript template engine.
+A simple, high performance Javascript template engine.
 
 一个简单的、高性能的Javascript模板引擎。 
 
+![](http://pandao.github.io/tiletemplate/tests/test-speed.png)
+
+> 注：测试结果会因环境而有所不同，仅供参考。
+
 ####主要特性
 
-- 简单小巧，精简后只有`4.42K`，开启gzip后只有`2.2K`；
+- 简单小巧，精简后只有`4.58K`，开启gzip后只有`2.3K`；
 - 原生语法，高性能预编译和渲染模板 [(性能测试)](http://pandao.github.io/tiletemplate/tests/test-speed.html "(性能测试)")；
-- 安全，过滤和转义危险语句；
-- 支持各种模块化标准（`CommonJS` / `AMD` / `CMD` 等）；
+- 安全机制，过滤和转义危险语句[(安全测试)](http://pandao.github.io/tiletemplate/tests/test-xss-filter.html "(安全测试)")；
+- 支持各种模块化标准（`CommonJS` / `AMD` / `CMD` 等）[( Require.js示例 ](http://pandao.github.io/tiletemplate/examples/requirejs-test.html) 、[Sea.js示例 )](http://pandao.github.io/tiletemplate/examples/seajs-test.html)；
 - 支持在 `Node.js` 环境下运行；
 - 支持调试，精确定位并通过控制台输出和显示错误或异常信息（[查看调试](http://pandao.github.io/tiletemplate/tests/test-debug.html)）；
 - 支持所有主流的浏览器（`IE6+`）；
@@ -73,16 +77,16 @@ a simple javascript template engine.
 
 ####在Node.js使用：
 
-	# tileTemplate.render(文件名, 数据, 编码);
-
 	var tileTemplate = require("../src/tiletemplate.node");
+
 	// 通过npm安装的
 	// var tileTemplate = require('tiletemplate');
 
 	// 设置基本目录
 	tileTemplate.config("basePath", __dirname + "/tpl");
 
-	//console.log(tileTemplate.render("Hello <%=str%>", {str:"wolrd!"}));
+	// tileTemplate.render(文件名/模板内容, 数据, 编码);
+	// console.log(tileTemplate.render("Hello <%=str%>", {str:"wolrd!"}));
 
 	// 预编译某个模板，用于循环渲染
 	//var compiler = tileTemplate.compile(tileTemplate.readFile("list.tile"));
@@ -97,7 +101,7 @@ a simple javascript template engine.
 
 	console.log('Server running at http://127.0.0.1:8888/');
 
-> 说明：`tileTemplate.readFile(文件名, 编码)` 方法只能在 `Node.js` 下使用。
+> 注：`tileTemplate.readFile(文件名, 编码)` 方法只能在 `Node.js` 下使用。
 
 ####主要语法
 
@@ -116,6 +120,8 @@ JS语句：
 	<p>暂时没有</p>	
 	<% } %>
 
+	<% var total = list.length; %>
+
 	<%=(list.index>1?'>1':'<1')%>
 	...
 
@@ -127,12 +133,20 @@ JS语句：
 
 	//注释文本
 	//<%=(list.index>1?'>1':'<1')%>
+	<% /* 注释文本 */ %>
+	<!-- HTML式注释 -->
 
 嵌套模板（支持多级嵌套）：
 
 	<% include('模板id') %>
 
-自定义标签语句（只能输出字符串）：
+转义字符（默认不转义字符，需要的在前面加上@）：
+
+	<img src="<%=@avatar%>" />
+
+> 作用：过滤和防止XSS攻击。例如：当avatar的值为`http://xxxx/xx.jpg" onload="alert(123)`。
+
+自定义标签语句：
 
 	# 定义标签语句
     tileTemplate.tag("em", function(content) {         
@@ -153,6 +167,8 @@ JS语句：
     <%=tag:em:haha%>
     <%=tag:em:哈哈%>    
     <%=tag:time%>
+
+> 注：自定义标签语句只能输出字符串。
 
 ####主要方法
 
@@ -223,6 +239,10 @@ JS语句：
 		add : function() {
 		}
 	});
+
+####更新日志
+
+[查看更新日志](https://github.com/pandao/tileTemplate/blob/master/CHANGE.md)
 
 ####License
 

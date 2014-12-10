@@ -33,3 +33,12 @@
 
 - 优化性能；
 - 修正一些bug和修改文档；
+
+#####v1.4.0
+
+主要改进安全转义功能。
+
+- 删除 `escape()` 和 `unescape()` 方法；
+- 增加 `htmlEncode()` 和 `htmlDecode()` 方法；
+- `xssFilter()` 方法更名为 `filter()`；
+- 添加xxs过滤的测试用例；
