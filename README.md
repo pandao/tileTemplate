@@ -8,6 +8,10 @@ A simple, high performance Javascript template engine.
 
 > 注：测试结果会因环境而有所不同，仅供参考。
 
+####目录
+
+- [使用方法](#使用方法)
+
 ####主要特性
 
 - 简单小巧，精简后只有`4.58K`，开启gzip后只有`2.3K`；
