@@ -1,6 +1,6 @@
 {
   "name": "tileTemplate",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "A simple, high performance Javascript template engine.",
   "main": "src/tiletemplate.node.js",
   "directories": {

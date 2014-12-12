@@ -1,12 +1,11 @@
 /**
  *
- * tileTemplate
- *
- * @FileName: tiletemplate.js
- * @Auther: Pandao 
- * @version: 1.4.0
- * @License: MIT
- * Copyright@2014 all right reserved.
+ * @file		 tileTemplate.js 
+ * @auther		 Pandao
+ * @version		 1.5.0
+ * @license		 MIT
+ * @copyright    2014 Pandao
+ * {@link http://github.com/pandao/tileTemplate}
  */
 
 ;(function(tileTemplate) {
@@ -29,10 +28,23 @@
 }(function(require, exports, module) {
     
 	"use strict"; 
+
+	/**
+	 * @name       							$
+	 * @description							通过ID获取DOM对象
+	 * @param		{String}	id         	ID名称
+	 * @return		{Mixed}	    return		返回DOM对象或ID
+	 */
     
     var $     = function (id) {        
         return (typeof document !== "undefined") ? document.getElementById(id) : id;
     };
+
+	/**
+	 * @name       							trim
+	 * @description							扩展String对象的清除两边空格的方法
+	 * @return		{String}   return       返回String对象本身
+	 */
     
     if(typeof ''.trim !== "function") {  
         String.prototype.trim = function () {
@@ -41,14 +53,42 @@
     } 
     
     var _this = exports;
+
+	/**
+	 * @name       							version
+	 * @description							版本号
+	 */
     
-    exports.version = "1.0.0";
+    exports.version = "1.5.0";
+
+	/**
+	 * @name       							tags
+	 * @description							存放自定义标签语句的数组
+	 */
     
     exports.tags    = [];
+
+	/**
+	 * @name       							caches
+	 * @description							存放缓存的数组
+	 */
     
     exports.caches  = [];
+
+	/**
+	 * @name       							regex
+	 * @description							存放正则的对象
+	 */
         
     exports.regex   = {};
+
+	/**
+	 * @name       							extend
+	 * @description							扩展对象
+	 * @param		{Object}	defaults	要扩展进来的对象
+	 * @param		{Object}	options		扩展对象本身
+	 * @return		{Object}	options		返回扩展后的对象
+	 */
     
     exports.extend  = function(defaults, options) { 
         
@@ -60,14 +100,11 @@
 
         return options;
     };
-    
-    exports.htmlEncode   = function(html) {
-        return html.replace(/\</igm, "&lt;").replace(/\>/igm, "&gt;").replace(/\"/igm, "&quot;").replace(/\'/igm, "&apos;"); 
-    };
-    
-    exports.htmlDecode = function(html) {
-        return html.replace(/\&lt;/igm, "<").replace(/\&gt;/igm, ">").replace(/\&quot;/igm, "\"").replace(/\&apos;/igm, "'");  
-    }; 
+
+	/**
+	 * @name       							settings
+	 * @description							配置选项
+	 */
         
     exports.settings = {
         debug    : false,
@@ -76,8 +113,17 @@
         openTag  : "<%",
         closeTag : "%>"
     };
+
+	/**
+	 * @name       							      set
+	 * @alias       						      config
+	 * @description							      过滤模板中的危险语句
+	 * @param		{String|Object}	key|options   模板文件的内容
+	 * @param		{String}        value	      模板语句的开始标签 
+	 * @return		{String}        result		  返回模板文件的内容
+	 */
         
-    exports.set      = exports.config = function() {
+    exports.set    =  exports.config = function() {
             
         if(arguments && arguments.length > 1)
         {     
@@ -89,6 +135,37 @@
         } 
 
     };
+
+	/**
+	 * @name       							htmlEncode
+	 * @description							对HTML内容进行编码
+	 * @param		{String}	html		HTML内容
+	 * @return		{String}	result		返回编码后的HTML内容
+	 */
+    
+    exports.htmlEncode   = function(html) {
+        return html.replace(/\</igm, "&lt;").replace(/\>/igm, "&gt;").replace(/\"/igm, "&quot;").replace(/\'/igm, "&apos;"); 
+    };
+
+	/**
+	 * @name       							htmlDecode
+	 * @description							对编码后的HTML内容进行解码
+	 * @param		{String}	html		编码后的HTML内容
+	 * @return		{String}	result		返回解码后HTML内容
+	 */
+    
+    exports.htmlDecode = function(html) {
+        return html.replace(/\&lt;/igm, "<").replace(/\&gt;/igm, ">").replace(/\&quot;/igm, "\"").replace(/\&apos;/igm, "'");  
+    }; 
+
+	/**
+	 * @name       							filter
+	 * @description							过滤模板中的危险语句
+	 * @param		{String}	tpl			模板文件的内容
+	 * @param		{String}	openTag		模板语句的开始标签
+	 * @param		{String}	closeTag	模板语句的结束标签
+	 * @return		{String}	result		返回模板文件的内容
+	 */
     
     exports.filter = function(tpl, openTag, closeTag) {  
         
@@ -104,6 +181,13 @@
         
         return tpl.trim();
     };
+
+	/**
+	 * @name       							compileInclude
+	 * @description							编译嵌套(include)的模板文件的回调函数
+	 * @param		{String}	data		传入的数据
+	 * @return		{String}	result		一个以字符串为形式的函数
+	 */
         
     exports.compileInclude = function(data) {
         
@@ -123,6 +207,15 @@
             return openTag + " " + compile  + " " + closeTag;
         });
     };
+
+	/**
+	 * @name       							compile
+	 * @description							编译模板文件
+	 * @param		{String}	tpl			模板文件的内容
+	 * @param		{Object}	data		传入的数据
+	 * @param		{Object}	options		配置选项，参数为：include 是否为嵌套的模板，name 模板ID，默认为 {include : false, name : "title" + guid}
+	 * @return		{Function}	result		返回一个函数
+	 */
         
     exports.compile  = function(tpl, data, options) {
         
@@ -206,6 +299,15 @@
 
         return fn;
     };
+
+	/**
+	 * @name                                render
+	 * @description							渲染模板文件
+	 * @param		{String}	id			模板ID或直接传入模板内容
+	 * @param		{Object}	data		传入的数据
+	 * @param		{String}	filename    指定模板名称
+	 * @return		{String}	result		返回HTML
+	 */
         
     exports.render = function(id, data, filename) {
         
@@ -229,10 +331,25 @@
             return html;
         }
     };
+
+	/**
+	 * @name                                tag
+	 * @description							自定义模板标签语句
+	 * @param		{String}	name		标签的名称 
+	 * @param		{Function}	callback    处理标签内容的回调函数
+	 * @return		{Void}	    result		无
+	 */
         
     exports.tag = function(name, callback) {
         this.tags[name] = callback;
     };
+
+	/**
+	 * @name                                clear
+	 * @description							清除模板缓存
+	 * @param		{String}	id			要清除的模板ID
+	 * @return		{Boolean}	result		返回true
+	 */
         
     exports.clear = function(id) {
         delete this.caches[id]; 

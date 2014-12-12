@@ -14,7 +14,7 @@ A simple, high performance Javascript template engine.
 - 原生语法，高性能预编译和渲染模板 [(性能测试)](http://pandao.github.io/tiletemplate/tests/test-speed.html "(性能测试)")；
 - 安全机制，过滤和转义危险语句[(安全测试)](http://pandao.github.io/tiletemplate/tests/test-xss-filter.html "(安全测试)")；
 - 支持各种模块化标准（`CommonJS` / `AMD` / `CMD` 等）[( Require.js示例 ](http://pandao.github.io/tiletemplate/examples/requirejs-test.html) 、[Sea.js示例 )](http://pandao.github.io/tiletemplate/examples/seajs-test.html)；
-- 支持在 `Node.js` 环境下运行；
+- 支持在 `Node.js` 环境下运行，同时也支持 `Express.js`；
 - 支持调试，精确定位并通过控制台输出和显示错误或异常信息（[查看调试](http://pandao.github.io/tiletemplate/tests/test-debug.html)）；
 - 支持所有主流的浏览器（`IE6+`）；
 - 支持 `include` 和自定义标签语法；
@@ -83,15 +83,16 @@ A simple, high performance Javascript template engine.
 	// var tileTemplate = require('tiletemplate');
 
 	// 设置基本目录
-	tileTemplate.config("basePath", __dirname + "/tpl");
+	tileTemplate.config("basePath", __dirname + "/tpl/");
 
 	// tileTemplate.render(文件名/模板内容, 数据, 编码);
 	// console.log(tileTemplate.render("Hello <%=str%>", {str:"wolrd!"}));
 
 	// 预编译某个模板，用于循环渲染
-	//var compiler = tileTemplate.compile(tileTemplate.readFile("list.tile"));
+	//var compiler = tileTemplate.compile(tileTemplate.readFile("list"));
 	
-	var html = tileTemplate.render("test.tile.html", data);
+	// v1.5.0 版本起无需填写扩展名，默认为 tile.html，可另行配置
+	var html = tileTemplate.render("test", data);
 	var http = require('http');
 	
 	http.createServer(function (request, response) {
@@ -102,6 +103,23 @@ A simple, high performance Javascript template engine.
 	console.log('Server running at http://127.0.0.1:8888/');
 
 > 注：`tileTemplate.readFile(文件名, 编码)` 方法只能在 `Node.js` 下使用。
+
+####在Express.js中使用
+
+	var express		 = require('express');
+	var app			 = express(); 
+	var tileTemplate = require("tiletemplate");
+	
+	// 初始化Express支持
+	tileTemplate.expressInit(app, __dirname + "/tpl/");
+	
+	app.get('/', function (req, res) { 
+		res.render('index', data);   // v1.5.0 版本起无需填写扩展名，默认为 tile.html，可另行配置
+	});
+	
+	var server = app.listen(3000, function() {
+	    console.log('Listening on port %d', server.address().port);
+	});
 
 ####主要语法
 
