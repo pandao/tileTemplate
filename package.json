@@ -1,6 +1,6 @@
 {
   "name": "tileTemplate",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "A simple, high performance Javascript template engine.",
   "main": "src/tiletemplate.node.js",
   "directories": {
@@ -25,8 +25,15 @@
   },
   "homepage": "https://github.com/pandao/tileTemplate",
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-contrib-jshint": "^0.10.0",
-    "grunt-contrib-uglify": "^0.6.0"
+    "dateformatter": "^0.1.0",
+    "express": "^4.14.0",
+    "gulp": "^3.9.1",
+    "gulp-header": "^1.8.8",
+    "gulp-notify": "^2.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-uglify": "^2.0.0",
+    "gulp-util": "^3.0.7",
+    "gulp-x-includer": "^0.1.2"
   }
 }

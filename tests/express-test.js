@@ -7,11 +7,11 @@ var tileTemplate = require("../src/tiletemplate.node");
 console.time('tileTemplate');
 
 var data = {
-	version: "1.0.0",
-	title : "标题XXX",
-	avatar : 'http://tp1.sinaimg.cn/2287297600/180/40014697506/1',
+	version : "1.0.0",
+	title   : "标题XXX",
+	avatar  : 'http://tp1.sinaimg.cn/2287297600/180/40014697506/1',
 	avatar2 : 'http://tp1.sinaimg.cn/2287297600/180/40014697506/1" onload="alert(123)',
-	list : []
+	list    : []
 };  
 
 for (var i = 0; i < 10; i ++) {
@@ -24,7 +24,7 @@ for (var i = 0; i < 10; i ++) {
     
 // 设置表情标签
 tileTemplate.tag("em", function(content) { 	
-	if(content == 12) {
+	if (content == 12) {
 		return '<img src="http://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/0b/tootha_thumb.gif" alt="em'+content+'"/>';
 	} else {
 		return content.toString();
